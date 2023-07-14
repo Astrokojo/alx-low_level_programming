@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - program prints the size of various types of the pc its gcc & run on
+ * main - program prints the size of various types of the pc its run on
  *
  * Return: Always 0 (Success)
  */
