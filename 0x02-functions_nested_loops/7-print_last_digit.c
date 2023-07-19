@@ -2,13 +2,12 @@
 /**
  * print_last_digit - Print last digit
  *
- * @i: input
  * @l: lastNum
  * Return:  last digit
  */
 int  print_last_digit(int n)
 {
-	int i;
+	int l;
 
 	l = n % 10;
 	if (l < 0)
