@@ -2,7 +2,8 @@
 /**
  * print_last_digit - Print last digit
  *
- * @n: input
+ * @i: input
+ * @l: lastNum
  * Return:  last digit
  */
 int  print_last_digit(int n)
