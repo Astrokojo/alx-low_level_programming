@@ -3,6 +3,7 @@
 /**
  * rev_string - Reverses a string.
  * @s: The string to be reversed.
+ * @temp: the temporary storage
  */
 void rev_string(char *s)
 {
@@ -14,7 +15,7 @@ void rev_string(char *s)
 
 	for (i = len - 1; i >= len / 2; i--)
 	{
-		tmp = s[i];
+		temp = s[i];
 		s[i] = s[len - i - 1];
 		s[len - i - 1] = temp;
 	}
