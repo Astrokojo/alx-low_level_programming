@@ -1,10 +1,9 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _strstr - a function that locates a substring
  * @haystack: the string to be tested
- * @needle: the substrint to be searched for
+ * @needle: the substring to be searched for
  * Return: returns a pointer to the beginning of the eye
 */
 char *_strstr(char *haystack, char *needle)
