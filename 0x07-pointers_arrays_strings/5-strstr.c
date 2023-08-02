@@ -1,29 +1,22 @@
 #include "main.h"
 
 /**
- * _strstr - a function that locates a substring
- * @haystack: the string to be tested
- * @needle: the substring to be searched for
- * Return: returns a pointer to the beginning of the eye
+ * _strstr - locates a substring
+ * @haystack: string to be scanned
+ * @needle: string containing the sequence of characters to match
+ * Return: pointer to the beginning of the located substring, or NULL if the
 */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j = 0, k;
+	int i, j;
 
-	for (i = 0; haystack[i] != 0; i++)
+	for (i = 0; haystack[i]; i++)
 	{
-		k = i;
-		j = 0;
-		for (; needle[j] != 0;)
-		{
-			if (haystack[k++] == needle[j++])
-			{
-				continue;
-			}
-			break;
-		}
-		if (needle[j] == '\0')
-			return ((haystack + i));
+		for (j = 0; needle[j] && haystack[i + j]; j++)
+			if (haystack[i + j] != needle[j])
+				break;
+		if (!needle[j])
+			return (haystack + i);
 	}
 	return (NULL);
 }
