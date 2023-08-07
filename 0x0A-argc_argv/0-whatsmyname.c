@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- * Main - Entry point
- * @argc - count
- * @argv - pointer
+ * main - Entry point
+ * @argc: count
+ * @argv: pointer
  *
- * Return - EXIT_SUCCESS
+ * Return: 0 is EXIT_SUCCESS
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	printf ("%s\n", argv[0]);
+	printf("%s\n", argv[0]);
 	return (0);
 }
