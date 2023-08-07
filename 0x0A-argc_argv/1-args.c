@@ -5,7 +5,7 @@
  * @argc: count
  * @argv: vector
  *
- * return: 0 (Success)
+ * Return: 0 (Success)
  */
 int main(int argc, char *argv[])
 {
