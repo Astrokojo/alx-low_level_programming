@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - allocates memory using malloc , if error exit is 98 
+ * malloc_checked - allocates memory using malloc , if error exit is 98
  * @b: the memory allocated by malloc
  *
  * Return: pointer to the allocated memory
