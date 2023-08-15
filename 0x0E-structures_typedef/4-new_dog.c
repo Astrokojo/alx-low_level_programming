@@ -1,45 +1,74 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
- * new_dog - Creates a new struct dog and initializes its elements.
- * @name: The name of the dog.
- * @age: The age of the dog.
- * @owner: The owner's name of the dog.
- * Return: A pointer to the newly created struct dog or NULL if memory fails.
-*/
+ * _strlen - returns length of string
+ * @s: string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+		;
+
+	return (i);
+}
+
+/**
+ * _strcpy - copies string
+ * @dest: destination
+ * @src: source
+ *
+ * Return: pointer to destination
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i]; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
+ * Return: pointer to new dog
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog_ptr;
+	dog_t *new_dog;
 
-	if (name == NULL || owner == NULL)
+	new_dog = malloc(sizeof(dog_t));
+	if (!new_dog)
 		return (NULL);
 
-	/* Allocate memory for the bew dog structure */
-	new_dog_ptr = malloc(sizeof(dog_t));
-	if (new_dog_ptr == NULL)
-		return (NULL);
-
-	/* Allocate memory for name and owner and copy the provided strings */
-	new_dog_ptr->name = strdup(name);
-	if (new_dog_ptr->name == NULL)
+	new_dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (!new_dog->name)
 	{
-		free(new_dog_ptr);
-		return NULL;
-	}
-
-	new_dog_ptr->owner = strdup(owner);
-	if (new_dog_ptr->owner == NULL)
-	{
-		free(new_dog_ptr->name);
-		free(new_dog_ptr);
+		free(new_dog);
 		return (NULL);
 	}
+	new_dog->name = _strcpy(new_dog->name, name);
 
-	/* Assign age */
-	new_dog_ptr->age = age;
+	new_dog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (!new_dog->owner)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
+	new_dog->owner = _strcpy(new_dog->owner, owner);
 
-	return (new_dog_ptr);
+	new_dog->age = age;
+
+	return (new_dog);
 }
