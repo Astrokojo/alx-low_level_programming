@@ -10,12 +10,15 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int n;
 	
-	for (n = 0; b && *b; b++)
+	if (!b)
+		return (0);
+	while (*b != '\0')
 	{
-		if (*b != 0 && *b != 1)
+		if (*b != '0' && *b != '1')
 			return (0);
-		n <<= 1;
-		n += *b - 0;
+		n = n * 2 + (*b - '0');
+		n++;
 	}
 	return (n);
+
 }
