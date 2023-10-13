@@ -4,12 +4,12 @@
  * insert_dnodeint_at_index - inserts a new node at given index in the list
  * @head: pointer to head of the list
  * @idx: index to add at, starting from 0
- * @n: value of new node
  * Return: new node or null
  **/
-dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx)
 {
 	unsigned int count;
+	int n;
 	dlistint_t *tmp, *new, *tmp_prev;
 
 	if (head == NULL && idx > 0)
